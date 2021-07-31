@@ -5,7 +5,7 @@ stages:
         steps:
           - script: sudo apt-get -yq update
           - script: sudo apt-get install nano
-      - job:
+      - job: install_python
         steps:
           - script: sudo apt-get install -yq python
   
