@@ -4,7 +4,7 @@ parameters:
 stages:
   - stage: ${{parameters.name}}
     jobs:
-      - job: ${{parameters.frist_job}}
+      - job: ${{parameters.first_job}}
         steps:
           - script: sudo apt-get -yq update
           - script: sudo apt-get install nano
