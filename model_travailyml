@@ -1,0 +1,39 @@
+
+# File: jobs/build.yml
+
+parameters:
+  name: ''
+  pool: ''
+  sign: false
+
+jobs:
+- job: ${{ parameters.name }}
+  pool: ${{ parameters.pool }}
+  steps:
+  - script: npm install
+  - script: npm test
+  - ${{ if eq(parameters.sign, 'true') }}:
+    - script: sign
+
+
+# File: azure-pipelines.yml
+
+jobs:
+- template: jobs/build.yml  # Template reference
+  parameters:
+    name: macOS
+    pool:
+      vmImage: 'macOS-10.14'
+
+- template: jobs/build.yml  # Template reference
+  parameters:
+    name: Linux
+    pool:
+      vmImage: 'ubuntu-16.04'
+
+- template: jobs/build.yml  # Template reference
+  parameters:
+    name: Windows
+    pool:
+      vmImage: 'vs2017-win2016'
+    sign: true  # Extra step on Windows only
