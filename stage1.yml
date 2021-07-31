@@ -1,3 +1,6 @@
+parameters:
+  first_job: 'preparation_env'
+  second_job: 'install_python'
 stages:
   - stage: ${{parameters.name}}
     jobs:

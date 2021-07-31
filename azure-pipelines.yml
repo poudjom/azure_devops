@@ -2,7 +2,10 @@ stages:
   - template: stage1.yml
     parameters:
       name: 'test'
-      first_job: 'preparation_env'
+      first_job: 'preparation'
       second_job: 'install_python'
+  - template: stage1.yml
+    parameters:
+      name: 'uat'
 
   
