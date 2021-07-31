@@ -4,6 +4,7 @@ stages:
   - job: Install
     steps:
     - script: echo install
+  jobs:
   - job: install nano
     steps:
     - script: apt-get update
