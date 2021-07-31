@@ -1,6 +1,3 @@
-parameters:
-  name:''
-
 stages:
   - stage: test
     jobs:
