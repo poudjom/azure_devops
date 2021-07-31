@@ -6,9 +6,9 @@ stages:
     - script: echo install
   - job: install nano
     step: update OS
-      script: apt-get -yq update
+      script: echo update
     step: Installation du package
-      script: apt-get install nano
+      script: echo test
 - stage: Test
   jobs:
   - job: TestOnWindows
