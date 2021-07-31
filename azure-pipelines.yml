@@ -1,5 +1,5 @@
 stages:
-  - template: stage1.yml
+  - template: stage11.yml
     parameters:
       name: 'test'
       first_job: 'init'
