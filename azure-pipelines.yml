@@ -1,24 +1,11 @@
+parameters:
+  name:''
+
 stages:
-- stage: Init
-  jobs:
-  - job: Install
-    steps:
-    - script: echo install
-    - script: sudo apt-get -yq update
-  - job: Install1
-    steps:
-    - script: echo install
-    - script: sudo apt-get -yq update
-- stage: Test
-  jobs:
-  - job: TestOnWindows
-    steps:
-    - script: echo Testing on Windows!
-  - job: TestOnLinux
-    steps:
-    - script: echo Testing on Linux!
-- stage: Deploy
-  jobs:
-  - job: Deploy
-    steps:
-    - script: echo Deploying the code!
+  - stage: test
+    jobs:
+      - job: install
+        steps:
+          - script: sudo apt-get -yq update
+          - script: sudo apt-get install nano
+  
