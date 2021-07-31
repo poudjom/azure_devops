@@ -1,8 +1,11 @@
 stages:
-  - stage: test
+  - stage: ${{parameters.name}}
     jobs:
-      - job: install
+      - job: init
         steps:
           - script: sudo apt-get -yq update
           - script: sudo apt-get install nano
+      - job:
+        steps:
+          - script: sudo apt-get install -yq python
   
