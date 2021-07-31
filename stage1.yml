@@ -1,0 +1,15 @@
+parameters:
+  - name:''
+  - frist_job:''
+  - second_job:''
+
+stages:
+  - stage: ${{parameters.name}}
+    jobs:
+      - job: ${{parameters.frist_job}}
+        steps:
+          - script: sudo apt-get -yq update
+          - script: sudo apt-get install nano
+      - job: ${{parameters.second_job}}
+        steps:
+          - script: sudo apt-get install -yq python

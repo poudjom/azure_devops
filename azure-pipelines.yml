@@ -1,11 +1,8 @@
 stages:
-  - stage: ${{parameters.name}}
-    jobs:
-      - job: init
-        steps:
-          - script: sudo apt-get -yq update
-          - script: sudo apt-get install nano
-      - job: install_python
-        steps:
-          - script: sudo apt-get install -yq python
+  - template: stage1.yml
+    parameters:
+      name: 'test'
+      first_job: 'init'
+      second_job: 'install_python'
+
   
