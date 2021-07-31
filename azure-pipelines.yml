@@ -4,8 +4,6 @@ stages:
       name: 'test'
       first_job: 'preparation_test'
       second_job: 'install_python'
-    steps:
-    
   - template: stage1.yml
     parameters:
       name: 'uat'
