@@ -6,9 +6,9 @@ stages:
     - script: echo install
   - job: install nano
     steps:
-      script: echo update
+    - script: echo update
     steps:
-      script: echo test
+    - script: echo test
 - stage: Test
   jobs:
   - job: TestOnWindows
