@@ -2,16 +2,14 @@ parameters:
   first_job: 'preparation_env'
   second_job: 'install_python'
 
-variables:      # pipeline-level
-  EDITEUR: 'POUDJOM'
-  ANOTHER_VAR: 'another value'
-
 stages:
   - stage: ${{parameters.name}}
     jobs:
       - job: ${{parameters.first_job}}
+        variables:  # job-level
+          EDITEUR: 'POUDJOM'
         steps:
-          - script: echo Bonjour $(EDITEUR) 
+          - script: echo  $(EDITEUR) 
           - script: sudo apt-get -yq update
           - script: sudo apt-get install nano
       - job: ${{parameters.second_job}}
