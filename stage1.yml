@@ -10,7 +10,7 @@ stages:
     jobs:
       - job: ${{parameters.first_job}}
         steps:
-          - script: echo Bonjour $editeur 
+          - script: echo Bonjour $(editeur) 
           - script: sudo apt-get -yq update
           - script: sudo apt-get install nano
       - job: ${{parameters.second_job}}
