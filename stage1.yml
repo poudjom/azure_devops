@@ -9,7 +9,7 @@ stages:
         variables:  # job-level
           EDITEUR: 'POUDJOM'
         steps:
-          - script: echo  $(EDITEUR) 
+          - script: echo  'bonjour je suis Monsieur '$(EDITEUR)
           - script: sudo apt-get -yq update
           - script: sudo apt-get install nano
       - job: ${{parameters.second_job}}
