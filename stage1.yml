@@ -7,7 +7,6 @@ variables:
 
 stages:
   - stage: ${{parameters.name}}
-  vari
     jobs:
       - job: ${{parameters.first_job}}
         steps:
