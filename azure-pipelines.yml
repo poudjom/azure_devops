@@ -9,6 +9,9 @@ stages:
     steps:
     - script: echo install
     - script: sudo apt-get -yq update
+    steps:
+    - script: echo install
+    - script: sudo apt-get -yq update
 - stage: Test
   jobs:
   - job: TestOnWindows
