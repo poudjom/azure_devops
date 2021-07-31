@@ -4,11 +4,9 @@ stages:
   - job: Install
     steps:
     - script: echo install
-  - job: install nano
+  - job: Install
     steps:
-    - script: echo update
-    steps:
-    - script: echo test
+    - script: apt-get update
 - stage: Test
   jobs:
   - job: TestOnWindows
